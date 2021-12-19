@@ -44,14 +44,89 @@ console.log(m)
 var myArray1 = [1, 5, 6, 2, 3];
 var m1 = Math.max(...myArray1);
 console.log(m1)
+    //<!---------------------------------------------Program No 5-------------------------------------------->
+function nextBiggest(arr) {
+    let max = -Infinity,
+        result = -Infinity;
 
+    for (const value of arr) {
+        const nr = Number(value)
 
-//<!---------------------------------------------Program No 5-------------------------------------------->
+        if (nr > max) {
+            [result, max] = [max, nr] // save previous max
+        } else if (nr < max && nr > result) {
+            result = nr; // new second biggest
+        }
+    }
+
+    return result;
+}
+
+const arr = ['20', '120', '111', '215', '54', '78'];
+console.log(nextBiggest(arr));
 //<!---------------------------------------------Program No 6-------------------------------------------->
+// function CountingEvenOdd(arr, arr_size){
+//     let even_count = 0;
+//     let odd_count = 0;
+
+//     // loop to read all the values in the array
+//     for (let i = 0; i < arr_size; i++) {
+
+//         // checking if a number is completely
+//         // divisible by 2
+//         if (arr[i] & 1 == 1)
+//             odd_count++;
+//         else
+//             even_count++;
+//     }
+//     console.log(CountingEvenOdd(arr, arr_size))
 //<!---------------------------------------------Program No 7-------------------------------------------->
+var ar = [-1, -2, -3, 0, 0, 5, 12, 0, -10];
+
+function counter(ar) {
+    var counter = [0, 0, 0];
+    ar.forEach(function(a) {
+        if (a < 0)
+            counter[0]++;
+        else if (a > 0)
+            counter[2]++;
+        else
+            counter[1]++;
+    });
+    return counter;
+}
+
+var result = counter(ar);
+console.log("No of Negative, Zero and Positive Elements are : " + result);
 //<!---------------------------------------------Program No 8-------------------------------------------->
+var first = [1, 2, 3];
+var second = [4, 5];
+
+for (var i of second) {
+    first.push(i);
+}
+
+console.log(first);
 //<!---------------------------------------------Program No 9-------------------------------------------->
+function insertElement() {
+    let array = [1, 2, 3, 4, 5];
+
+    // index to add to
+    let index = 3;
+
+    // element that you want to add
+    let element = 8;
+
+    array.splice(index, 0, element);
+    console.log(array);
+}
+
+insertElement();
 //<!---------------------------------------------Program No 10-------------------------------------------->
+var ar = [1, 2, 3, 4, 5, 6];
+
+ar.length = 4; // set length to remove elements
+console.log(ar); // [1, 2, 3, 4]
 //<!---------------------------------------------Program No 11-------------------------------------------->
 //<!---------------------------------------------Program No 12-------------------------------------------->
 //<!---------------------------------------------Program No 13-------------------------------------------->
